@@ -18,7 +18,7 @@ How to setup a command:
 
 const Command = require('../Structures/Command')
 
-`module.exports = {
+`module.exports = {`
 
     name: "cmd name",
     description: "cmd description",
