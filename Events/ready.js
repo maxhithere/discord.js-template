@@ -1,9 +1,7 @@
 
 const Event = require("../Structures/Event.js");
 const mongoose = require("mongoose")
-const testSchema = require('../Data/test-schema.js')
 const { DBURL } = require('../Data/config.json')
-const User = require('../Commands/schemas/User.js')
 
 module.exports = new Event("ready", (client) => {
 
@@ -17,7 +15,7 @@ module.exports = new Event("ready", (client) => {
 
       }).then(() => {
 
-        console.log("Hazed Is Now Connected To DB!")
+        console.log("I Am Now Connected To DB!")
 
         
 
@@ -29,25 +27,19 @@ module.exports = new Event("ready", (client) => {
 
         await new testSchema({
 
-          message: 'wassup'
+          message: 'test'
 
         }).save()
 
       }, 1000)
 
 
-     // const users = User.find();
-     // for (let user of users) {
-     // client.userSettings.set(user.Id, user);
-    //  }
     
-      // require the premium handler
-    //  require("../Structures/premuim")(client);
 
    
     
-      client.user.setActivity(`;help | ${client.guilds.cache.size} servers`, { type: 'WATCHING' });
-      //console.log(client.guilds.cache)
+      client.user.setActivity(`help | ${client.guilds.cache.size} servers`, { type: 'WATCHING' });
+
 
 
      
