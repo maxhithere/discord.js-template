@@ -19,7 +19,7 @@ How to setup a command:
 
 
     const Command = require('../Structures/Command')
-    module.exports = {
+    module.exports = new Command ({
     name: "cmd name",
     description: "cmd description",
     permission: "SEND_MESSAGES",  //you can put any permission you want here
@@ -30,4 +30,4 @@ How to setup a command:
     
     
     }
-    }
+    })
