@@ -1,10 +1,7 @@
 const Event = require("../Structures/Event.js")
 const Discord = require("discord.js")
-const User = require('../Commands/schemas/User')
-const db = require('../Commands/models/cmds')
-const ccschema = require('../Commands/models/cc.js')
-const cschema = require('../Commands/models/afkdb.js')
 const { Collection } = require('discord.js')
+
 module.exports = new Event("messageCreate", async (client, message) => {
 	
 
@@ -22,17 +19,17 @@ module.exports = new Event("messageCreate", async (client, message) => {
 
 	const command = client.commands.find(cmd => cmd.name == args[0]);
 
-	if (!command) return //message.reply(`${args[0]} is not a valid command!`);
+	if (!command) return;
 	
 	
 	const embed3 = new Discord.MessageEmbed()
 	.setColor("RED");
-		embed3.setDescription((`<:errorx:916919739756978186> You do not have the permissions to run this command!`))
+		embed3.setDescription((`You do not have the permissions to run this command!`))
 
 
 		const embed4 = new Discord.MessageEmbed()
 	.setColor("RED");
-		embed4.setDescription((`<:errorx:916919739756978186> I do not have the permissions to run this command!`))
+		embed4.setDescription((`I do not have the permissions to run this command!`))
 
 
     const permission = message.member.permissions.has(command.permission, true);
@@ -45,14 +42,10 @@ module.exports = new Event("messageCreate", async (client, message) => {
    
 	args.slice(0)
 
-	const check = await db.findOne({ Guild: message.guild.id })
-if (check) {
-   if (check.Cmds.includes(command.name)) return message.reply("This command is disabled!")
-   command.run(client, message, args)
-} else {
+	
 	
 		command.run(client, message, args)
-}
+
 
 	})
    
