@@ -16,10 +16,10 @@ To actually make commands, make a folder called `Commands` inside src
 
 How to setup a command:
 
-const Command = require('../Structures/Command')
 
-`module.exports = {`
 
+    `const Command = require('../Structures/Command')
+    module.exports = {
     name: "cmd name",
     description: "cmd description",
     permission: "SEND_MESSAGES",  //you can put any permission you want here
