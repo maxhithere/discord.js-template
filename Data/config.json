@@ -1,6 +1,6 @@
 
 {
-	"token": "OTA1MjI2NTU3NzcyMTM2NDU5.YYG_7Q.6qXDn2dlaRQ4IObgA3wxn0fyKDY",
-	"prefix": ";",
-	"DBURL": "mongodb+srv://max:basketdill@cluster0.gx175.mongodb.net/Cluster0?retryWrites=true&w=majority"
+	"token": "place your token here",
+	"prefix": "put your prefix here",
+	"DBURL": "put your mongo db connection string here"
 }
